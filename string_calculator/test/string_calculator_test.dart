@@ -14,5 +14,16 @@ void main() {
     test('should handle newlines as delimiters', () {
       expect(StringCalculator.add('1\n2,3'), equals(6));
     });
+
+    test('should throw an exception for negative numbers', () {
+      expect(
+        () => StringCalculator.add('-1,2,-3,4'),
+        throwsA(
+          predicate(
+            (e) => e.toString().contains('negative numbers not allowed -1, -3'),
+          ),
+        ),
+      );
+    });
   });
 }
