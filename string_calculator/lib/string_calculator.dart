@@ -3,6 +3,7 @@ class StringCalculator {
     if (numbers.isEmpty) {
       return 0;
     }
-    return 0; // Placeholder to pass the first test
+    var numberList = numbers.split(',').map((n) => int.parse(n)).toList();
+    return numberList.reduce((sum, n) => sum + n);
   }
 }
