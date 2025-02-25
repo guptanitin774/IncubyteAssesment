@@ -10,5 +10,9 @@ void main() {
     test('should return the number itself for a single number', () {
       expect(StringCalculator.add('1'), equals(1));
     });
+
+    test('should handle newlines as delimiters', () {
+      expect(StringCalculator.add('1\n2,3'), equals(6));
+    });
   });
 }
